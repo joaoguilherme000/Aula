@@ -45,6 +45,30 @@ namespace Aula
             }
             while (counterToo < 10);
         }
+        public static void ParaComeTeuCU()
+        {
+            for (int i = 0; i < 10; i++)
+                Console.WriteLine($"Hello World! The counter is {i}");
+            // Você pode aninhar um loop dentro do outro para formar pares:
 
+            for (int row = 1; row < 11; row++)
+            {
+                for (char column = 'a'; column < 'k'; column++)
+                {
+                    Console.WriteLine($"The cell is ({row}, {column})");
+                }
+            }
+        }
+        public static void ParOuImpar()
+        {
+            int sum = 0;
+            for (int number = 1; number < 21; number++)
+                if (number % 2 == 0)
+                    Console.WriteLine($"Pares {number}");
+
+            for (int number = 1; number < 21; number++)
+                if (number % 2 == 1)
+                    Console.WriteLine($"Impares {number}");
+        }
     }
 }
