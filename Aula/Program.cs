@@ -14,7 +14,7 @@ namespace Aula
         [STAThread]
         static void Main()
         {
-            Codiguinhos.Ifem();
+            Codiguinhos.Continua();
         }
     }
 }

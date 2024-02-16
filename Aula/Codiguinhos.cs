@@ -17,7 +17,9 @@ namespace Aula
                 Console.WriteLine("The answer is greater than 10");
             else
                 Console.WriteLine("The answer is not greater than 10");
-            // fodase se o if tem chave ou não
+            // é possível utilizar um if sem chaves { } apenas se houver apenas uma instrução dentro dele.
+            // Isso é conhecido como "forma de expressão" do if.
+            // Se houver mais de uma instrução, as chaves são obrigatórias.
             if (a + b > 1)
             {
                 Console.WriteLine("The answer is greater than 10");
@@ -26,6 +28,22 @@ namespace Aula
             {
                 Console.WriteLine("The answer is not greater than 10");
             }
+        }
+        public static void Continua()
+        {
+            int counter = 0;
+            while (counter < 10) 
+            {
+                Console.WriteLine($"Hello World! The counter is {counter}");
+                counter++;        // precisa do cifrão pra usar a variavel
+            }
+            int counterToo = 0;
+            do
+            { 
+                Console.WriteLine($"The counter is {counterToo}");
+                counterToo++;
+            }
+            while (counterToo < 10);
         }
 
     }
