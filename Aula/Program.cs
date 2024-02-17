@@ -14,7 +14,10 @@ namespace Aula
         [STAThread]
         static void Main()
         {
-            Codiguinhos.ParOuImpar();
+            // Codiguinhos.Listaralho();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmSplash());
         }
     }
 }

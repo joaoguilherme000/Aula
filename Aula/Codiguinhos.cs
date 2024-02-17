@@ -48,7 +48,7 @@ namespace Aula
         public static void ParaComeTeuCU()
         {
             for (int i = 0; i < 10; i++)
-                Console.WriteLine($"Hello World! The counter is {i}");
+                Console.WriteLine($"Contador {i}");
             // Você pode aninhar um loop dentro do outro para formar pares:
 
             for (int row = 1; row < 11; row++)
@@ -70,5 +70,65 @@ namespace Aula
                 if (number % 2 == 1)
                     Console.WriteLine($"Impares {number}");
         }
+
+        public static void Listaralho()
+        {
+            var names = new List<string> { "Coisa", "Ana", "Felipe" };
+            foreach (var name in names)
+            {   // pode fazer com letra ($"Hello {name.ToUpper()}!");
+                Console.WriteLine(name.ToUpper());
+            }
+
+            Console.WriteLine();
+            names.Add("Maria");
+            names.Add("Bill");
+            names.Remove("Ana");
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Hello {name.ToLower()}!");
+            }
+            Console.WriteLine($"Primeiro nome: {names[0]}.");
+            Console.WriteLine($"Adcionei {names[2]} e {names[3]} para a lista.");
+            Console.WriteLine($"Tem {names.Count} Pessoas");
+            var index = names.IndexOf("Felipe");
+            if (index != -1)
+            {
+                Console.WriteLine($"O nome {names[index]} Ta no {index} lugar");
+            }
+            var notFound = names.IndexOf("Nome sem lista");
+            Console.WriteLine($"Quando não encontra aparece {notFound}");
+            names.Sort();
+            foreach (var name in names)
+            {
+                Console.WriteLine($"Diferente {name.ToUpper()}!");
+            }
+            Console.WriteLine();
+
+            var fibonacciNumbers = new List<int> { 1, 1 };
+            // var previous = fibonacciNumbers[fibonacciNumbers.Count - 1]; pega o segundo item
+            // var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2]; // e o terceiro
+            //
+            // fibonacciNumbers.Add(previous + previous2); // soma e adciona na lista
+            //
+            // foreach (var item in fibonacciNumbers)
+            //{
+            //   Console.WriteLine(item);
+            //}
+            //
+            // todos os numero de fibonacci
+
+            while (fibonacciNumbers.Count < 20)
+            {
+                var antes = fibonacciNumbers[fibonacciNumbers.Count - 1];
+                var antes2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+
+                fibonacciNumbers.Add(antes + antes2);
+            }
+            foreach (var item in fibonacciNumbers)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
     }
 }
