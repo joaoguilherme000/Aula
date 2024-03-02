@@ -125,11 +125,11 @@ namespace EmpresaABC
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(603, 512);
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(169, 37);
+            this.btnVoltar.Size = new System.Drawing.Size(50, 53);
             this.btnVoltar.TabIndex = 6;
-            this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // frmMenuPrincipal
