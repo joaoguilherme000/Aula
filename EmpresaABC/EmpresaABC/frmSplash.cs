@@ -26,5 +26,17 @@ namespace EmpresaABC
         {
 
         }
+
+        private void frmSplash_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEntrar_click(object sender, EventArgs e)
+        {
+            frmLogin abrir = new frmLogin();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

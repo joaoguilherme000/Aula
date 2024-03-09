@@ -47,7 +47,7 @@ namespace EmpresaABC
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(169, 165);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Text = "&Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnClientes.UseVisualStyleBackColor = true;
@@ -60,8 +60,8 @@ namespace EmpresaABC
             this.btnFuncionarios.Location = new System.Drawing.Point(52, 308);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(169, 165);
-            this.btnFuncionarios.TabIndex = 1;
-            this.btnFuncionarios.Text = "Funcionarios";
+            this.btnFuncionarios.TabIndex = 3;
+            this.btnFuncionarios.Text = "&Funcionarios";
             this.btnFuncionarios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnFuncionarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFuncionarios.UseVisualStyleBackColor = true;
@@ -74,8 +74,8 @@ namespace EmpresaABC
             this.btnProdutos.Location = new System.Drawing.Point(309, 91);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(169, 165);
-            this.btnProdutos.TabIndex = 2;
-            this.btnProdutos.Text = "Produtos";
+            this.btnProdutos.TabIndex = 1;
+            this.btnProdutos.Text = "Pro&dutos";
             this.btnProdutos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProdutos.UseVisualStyleBackColor = true;
@@ -88,8 +88,8 @@ namespace EmpresaABC
             this.btnFornecedores.Location = new System.Drawing.Point(563, 91);
             this.btnFornecedores.Name = "btnFornecedores";
             this.btnFornecedores.Size = new System.Drawing.Size(169, 165);
-            this.btnFornecedores.TabIndex = 3;
-            this.btnFornecedores.Text = "Fornecedores";
+            this.btnFornecedores.TabIndex = 2;
+            this.btnFornecedores.Text = "Fo&rnecedores";
             this.btnFornecedores.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnFornecedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnFornecedores.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@ namespace EmpresaABC
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(169, 165);
             this.btnVendas.TabIndex = 4;
-            this.btnVendas.Text = "Vendas";
+            this.btnVendas.Text = "&Vendas";
             this.btnVendas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVendas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVendas.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@ namespace EmpresaABC
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(169, 165);
             this.btnUsuarios.TabIndex = 5;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "&Usuários";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -131,6 +131,7 @@ namespace EmpresaABC
             this.btnVoltar.Size = new System.Drawing.Size(50, 53);
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // frmMenuPrincipal
             // 

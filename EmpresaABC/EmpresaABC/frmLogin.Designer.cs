@@ -53,6 +53,7 @@ namespace EmpresaABC
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
+            this.lblUsuario.CausesValidation = false;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.Location = new System.Drawing.Point(403, 151);
             this.lblUsuario.Name = "lblUsuario";
@@ -67,7 +68,7 @@ namespace EmpresaABC
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(258, 26);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtSenha
             // 
@@ -77,7 +78,7 @@ namespace EmpresaABC
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = 'l';
             this.txtSenha.Size = new System.Drawing.Size(258, 25);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TabIndex = 1;
             // 
             // lblSenha
             // 
@@ -96,9 +97,10 @@ namespace EmpresaABC
             this.btnSair.Location = new System.Drawing.Point(403, 357);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(81, 32);
-            this.btnSair.TabIndex = 5;
+            this.btnSair.TabIndex = 2;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnEntrar
             // 
@@ -106,9 +108,10 @@ namespace EmpresaABC
             this.btnEntrar.Location = new System.Drawing.Point(580, 357);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(81, 32);
-            this.btnEntrar.TabIndex = 6;
+            this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // frmLogin
             // 

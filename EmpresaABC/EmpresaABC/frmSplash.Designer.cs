@@ -30,22 +30,23 @@ namespace EmpresaABC
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplash));
-            this.pctLogo = new System.Windows.Forms.PictureBox();
+            this.pctSplash = new System.Windows.Forms.PictureBox();
             this.prgSplash = new System.Windows.Forms.ProgressBar();
             this.lblPorcentagem = new System.Windows.Forms.Label();
-            this.lblSimbolo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+            this.lblPorc = new System.Windows.Forms.Label();
+            this.btnEntrar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSplash)).BeginInit();
             this.SuspendLayout();
             // 
-            // pctLogo
+            // pctSplash
             // 
-            this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-            this.pctLogo.Location = new System.Drawing.Point(230, 96);
-            this.pctLogo.Name = "pctLogo";
-            this.pctLogo.Size = new System.Drawing.Size(300, 225);
-            this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctLogo.TabIndex = 0;
-            this.pctLogo.TabStop = false;
+            this.pctSplash.Image = ((System.Drawing.Image)(resources.GetObject("pctSplash.Image")));
+            this.pctSplash.Location = new System.Drawing.Point(230, 96);
+            this.pctSplash.Name = "pctSplash";
+            this.pctSplash.Size = new System.Drawing.Size(300, 225);
+            this.pctSplash.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSplash.TabIndex = 0;
+            this.pctSplash.TabStop = false;
             // 
             // prgSplash
             // 
@@ -67,33 +68,45 @@ namespace EmpresaABC
             this.lblPorcentagem.Text = "0";
             this.lblPorcentagem.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lblSimbolo
+            // lblPorc
             // 
-            this.lblSimbolo.AutoSize = true;
-            this.lblSimbolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSimbolo.Location = new System.Drawing.Point(372, 458);
-            this.lblSimbolo.Name = "lblSimbolo";
-            this.lblSimbolo.Size = new System.Drawing.Size(23, 20);
-            this.lblSimbolo.TabIndex = 3;
-            this.lblSimbolo.Text = "%";
-            this.lblSimbolo.Click += new System.EventHandler(this.label2_Click);
+            this.lblPorc.AutoSize = true;
+            this.lblPorc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPorc.Location = new System.Drawing.Point(372, 458);
+            this.lblPorc.Name = "lblPorc";
+            this.lblPorc.Size = new System.Drawing.Size(23, 20);
+            this.lblPorc.TabIndex = 3;
+            this.lblPorc.Text = "%";
+            this.lblPorc.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnEntrar
+            // 
+            this.btnEntrar.Location = new System.Drawing.Point(654, 496);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btnEntrar.TabIndex = 4;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_click);
             // 
             // frmSplash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.lblSimbolo);
+            this.Controls.Add(this.btnEntrar);
+            this.Controls.Add(this.lblPorc);
             this.Controls.Add(this.lblPorcentagem);
             this.Controls.Add(this.prgSplash);
-            this.Controls.Add(this.pctLogo);
+            this.Controls.Add(this.pctSplash);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loja ABC - Splash";
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+            this.Load += new System.EventHandler(this.frmSplash_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSplash)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,9 +114,10 @@ namespace EmpresaABC
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pctLogo;
+        private System.Windows.Forms.PictureBox pctSplash;
         private System.Windows.Forms.ProgressBar prgSplash;
         private System.Windows.Forms.Label lblPorcentagem;
-        private System.Windows.Forms.Label lblSimbolo;
+        private System.Windows.Forms.Label lblPorc;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
