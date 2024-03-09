@@ -23,3 +23,4 @@ C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaA
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.csproj.CoreCompileInputs.cache
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.exe
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.pdb
+C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmFuncionarios.resources
