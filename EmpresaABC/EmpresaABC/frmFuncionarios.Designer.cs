@@ -51,7 +51,6 @@ namespace EmpresaABC
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,6 +60,7 @@ namespace EmpresaABC
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.pnlFuncionarios.SuspendLayout();
             this.gpgDados.SuspendLayout();
             this.SuspendLayout();
@@ -168,6 +168,7 @@ namespace EmpresaABC
             // 
             // gpgDados
             // 
+            this.gpgDados.Controls.Add(this.textBox7);
             this.gpgDados.Controls.Add(this.textBox6);
             this.gpgDados.Controls.Add(this.textBox5);
             this.gpgDados.Controls.Add(this.maskedTextBox3);
@@ -177,7 +178,6 @@ namespace EmpresaABC
             this.gpgDados.Controls.Add(this.comboBox1);
             this.gpgDados.Controls.Add(this.label9);
             this.gpgDados.Controls.Add(this.label8);
-            this.gpgDados.Controls.Add(this.maskedTextBox4);
             this.gpgDados.Controls.Add(this.label6);
             this.gpgDados.Controls.Add(this.label7);
             this.gpgDados.Controls.Add(this.maskedTextBox2);
@@ -210,7 +210,9 @@ namespace EmpresaABC
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(103, 68);
+            this.textBox1.MaxLength = 10;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(91, 26);
             this.textBox1.TabIndex = 0;
@@ -218,6 +220,7 @@ namespace EmpresaABC
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(103, 113);
+            this.textBox2.MaxLength = 100;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(272, 26);
             this.textBox2.TabIndex = 1;
@@ -235,6 +238,7 @@ namespace EmpresaABC
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(454, 113);
+            this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 26);
             this.textBox3.TabIndex = 2;
@@ -303,13 +307,6 @@ namespace EmpresaABC
             this.label7.TabIndex = 11;
             this.label7.Text = "Endereço";
             // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(103, 206);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(324, 26);
-            this.maskedTextBox4.TabIndex = 5;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -357,6 +354,7 @@ namespace EmpresaABC
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(521, 206);
+            this.textBox4.MaxLength = 5;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(53, 26);
             this.textBox4.TabIndex = 6;
@@ -372,6 +370,7 @@ namespace EmpresaABC
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(103, 249);
+            this.textBox5.MaxLength = 100;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(123, 26);
             this.textBox5.TabIndex = 8;
@@ -379,9 +378,18 @@ namespace EmpresaABC
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(323, 249);
+            this.textBox6.MaxLength = 100;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(123, 26);
             this.textBox6.TabIndex = 9;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(103, 206);
+            this.textBox7.MaxLength = 100;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(324, 26);
+            this.textBox7.TabIndex = 21;
             // 
             // frmFuncionarios
             // 
@@ -432,9 +440,9 @@ namespace EmpresaABC
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
