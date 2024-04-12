@@ -109,17 +109,17 @@ namespace EmpresaABC
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Equals("") 
-                && txtNome.Text.Equals("") 
-                && txtBairro.Text.Equals("") 
-                && txtSenha.Text.Equals("") 
-                && txtCidade.Text.Equals("") 
-                && txtEmail.Text.Equals("")
-                && txtEndereço.Text.Equals("")
-                && txtNumero.Text.Equals("")
-                && mskCelular.Text.Equals("     -")
-                && mskCEP.Text.Equals("     -")
-                && mskCPF.Text.Equals("   .   .   -")
-                && cbbEstado.Text.Equals(""))
+                || txtNome.Text.Equals("")
+                || txtBairro.Text.Equals("")
+                || txtSenha.Text.Equals("")
+                || txtCidade.Text.Equals("")
+                || txtEmail.Text.Equals("")
+                || txtEndereço.Text.Equals("")
+                || txtNumero.Text.Equals("")
+                || mskCelular.Text.Equals("     -")
+                || mskCEP.Text.Equals("     -")
+                || mskCPF.Text.Equals("   .   .   -")
+                || cbbEstado.Text.Equals(""))
             {
                 MessageBox.Show("Algum campo vazio!!",
                 "Mensagem do sistema", MessageBoxButtons.OK,
