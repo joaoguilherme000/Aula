@@ -70,7 +70,7 @@ namespace EmpresaABC
             txtEmail.Enabled = true;
             txtEndereço.Enabled = true;
             txtNumero.Enabled = true;
-            txtCelular.Enabled = true;
+            mskCelular.Enabled = true;
             mskCEP.Enabled = true;
             mskCPF.Enabled = true;
             cbbEstado.Enabled = true;
@@ -93,7 +93,7 @@ namespace EmpresaABC
             txtEmail.Enabled = false;
             txtEndereço.Enabled = false;
             txtNumero.Enabled = false;
-            txtCelular.Enabled = false;
+            mskCelular.Enabled = false;
             mskCEP.Enabled = false;
             mskCPF.Enabled = false;
             cbbEstado.Enabled = false;
@@ -116,9 +116,9 @@ namespace EmpresaABC
                 && txtEmail.Text.Equals("")
                 && txtEndereço.Text.Equals("")
                 && txtNumero.Text.Equals("")
-                && txtCelular.Text.Equals("")
-                && mskCEP.Text.Equals("")
-                && mskCPF.Text.Equals("")
+                && mskCelular.Text.Equals("     -")
+                && mskCEP.Text.Equals("     -")
+                && mskCPF.Text.Equals("   .   .   -")
                 && cbbEstado.Text.Equals(""))
             {
                 MessageBox.Show("Algum campo vazio!!",

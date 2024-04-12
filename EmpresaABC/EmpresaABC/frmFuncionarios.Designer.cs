@@ -39,6 +39,8 @@ namespace EmpresaABC
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.gpgDados = new System.Windows.Forms.GroupBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.Nome = new System.Windows.Forms.Label();
             this.txtEndereço = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -51,7 +53,7 @@ namespace EmpresaABC
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.mskCelular = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@ namespace EmpresaABC
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Nome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
             this.pnlFuncionarios.SuspendLayout();
             this.gpgDados.SuspendLayout();
             this.SuspendLayout();
@@ -185,7 +185,7 @@ namespace EmpresaABC
             this.gpgDados.Controls.Add(this.label8);
             this.gpgDados.Controls.Add(this.label6);
             this.gpgDados.Controls.Add(this.label7);
-            this.gpgDados.Controls.Add(this.txtCelular);
+            this.gpgDados.Controls.Add(this.mskCelular);
             this.gpgDados.Controls.Add(this.label5);
             this.gpgDados.Controls.Add(this.mskCPF);
             this.gpgDados.Controls.Add(this.label4);
@@ -202,6 +202,23 @@ namespace EmpresaABC
             this.gpgDados.TabIndex = 3;
             this.gpgDados.TabStop = false;
             this.gpgDados.Text = "Dados Pessoais";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(396, 68);
+            this.txtNome.MaxLength = 100;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(339, 26);
+            this.txtNome.TabIndex = 23;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Location = new System.Drawing.Point(331, 71);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(51, 20);
+            this.Nome.TabIndex = 22;
+            this.Nome.Text = "Nome";
             // 
             // txtEndereço
             // 
@@ -305,13 +322,13 @@ namespace EmpresaABC
             this.label7.TabIndex = 11;
             this.label7.Text = "Endereço";
             // 
-            // txtCelular
+            // mskCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(323, 163);
-            this.txtCelular.Mask = "99999-9999";
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(95, 26);
-            this.txtCelular.TabIndex = 4;
+            this.mskCelular.Location = new System.Drawing.Point(323, 163);
+            this.mskCelular.Mask = "99999-9999";
+            this.mskCelular.Name = "mskCelular";
+            this.mskCelular.Size = new System.Drawing.Size(95, 26);
+            this.mskCelular.TabIndex = 4;
             // 
             // label5
             // 
@@ -396,23 +413,6 @@ namespace EmpresaABC
             this.label1.Text = "Código";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Nome
-            // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(331, 71);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(51, 20);
-            this.Nome.TabIndex = 22;
-            this.Nome.Text = "Nome";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(396, 68);
-            this.txtNome.MaxLength = 100;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 26);
-            this.txtNome.TabIndex = 23;
-            // 
             // frmFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +464,7 @@ namespace EmpresaABC
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.MaskedTextBox mskCelular;
         private System.Windows.Forms.TextBox txtEndereço;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label Nome;
