@@ -38,3 +38,5 @@ C:\Users\Laboratorio-Info\Source\Repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\Empr
 C:\Users\Laboratorio-Info\Source\Repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.csproj.CoreCompileInputs.cache
 C:\Users\Laboratorio-Info\Source\Repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.exe
 C:\Users\Laboratorio-Info\Source\Repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.pdb
+C:\Users\Laboratorio-Info\source\repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmCalculadora.resources
+C:\Users\Laboratorio-Info\source\repos\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmPesquisar.resources
