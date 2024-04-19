@@ -19,7 +19,27 @@ namespace EmpresaABC
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            lstPesquisar.Items.Clear();
+            lstPesquisar.Items.Add(txtDescricao.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtDescricao.Clear();
+        }
+
+        private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = lstPesquisar.SelectedIndex;
+            string nome = lstPesquisar.SelectedItem.ToString();
+            MessageBox.Show("o numero da linha " + i + " " + nome);
+        }
+
+        private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("funcionou");
+            }
         }
     }
 }

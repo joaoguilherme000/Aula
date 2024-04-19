@@ -37,11 +37,13 @@ namespace EmpresaABC
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.lstPesquisar = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gpbPesquisar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbPesquisar
             // 
+            this.gpbPesquisar.Controls.Add(this.button1);
             this.gpbPesquisar.Controls.Add(this.lblDescricao);
             this.gpbPesquisar.Controls.Add(this.btnPesquisar);
             this.gpbPesquisar.Controls.Add(this.txtDescricao);
@@ -70,7 +72,7 @@ namespace EmpresaABC
             this.btnPesquisar.Location = new System.Drawing.Point(584, 23);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(155, 135);
-            this.btnPesquisar.TabIndex = 3;
+            this.btnPesquisar.TabIndex = 0;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -90,7 +92,7 @@ namespace EmpresaABC
             this.rdbNome.Location = new System.Drawing.Point(225, 44);
             this.rdbNome.Name = "rdbNome";
             this.rdbNome.Size = new System.Drawing.Size(67, 22);
-            this.rdbNome.TabIndex = 1;
+            this.rdbNome.TabIndex = 3;
             this.rdbNome.TabStop = true;
             this.rdbNome.Text = "Nome";
             this.rdbNome.UseVisualStyleBackColor = true;
@@ -101,7 +103,7 @@ namespace EmpresaABC
             this.rdbCodigo.Location = new System.Drawing.Point(71, 44);
             this.rdbCodigo.Name = "rdbCodigo";
             this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
-            this.rdbCodigo.TabIndex = 0;
+            this.rdbCodigo.TabIndex = 1;
             this.rdbCodigo.TabStop = true;
             this.rdbCodigo.Text = "Codigo";
             this.rdbCodigo.UseVisualStyleBackColor = true;
@@ -112,7 +114,18 @@ namespace EmpresaABC
             this.lstPesquisar.Location = new System.Drawing.Point(15, 210);
             this.lstPesquisar.Name = "lstPesquisar";
             this.lstPesquisar.Size = new System.Drawing.Size(752, 329);
-            this.lstPesquisar.TabIndex = 1;
+            this.lstPesquisar.TabIndex = 6;
+            this.lstPesquisar.SelectedIndexChanged += new System.EventHandler(this.lstPesquisar_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(361, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 43);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Limpar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPesquisar
             // 
@@ -140,5 +153,6 @@ namespace EmpresaABC
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCodigo;
         private System.Windows.Forms.ListBox lstPesquisar;
+        private System.Windows.Forms.Button button1;
     }
 }
