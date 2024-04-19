@@ -31,11 +31,11 @@ namespace EmpresaABC
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesquisar));
             this.gpbPesquisar = new System.Windows.Forms.GroupBox();
-            this.rdbCodigo = new System.Windows.Forms.RadioButton();
-            this.rdbNome = new System.Windows.Forms.RadioButton();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
+            this.rdbCodigo = new System.Windows.Forms.RadioButton();
             this.lstPesquisar = new System.Windows.Forms.ListBox();
             this.gpbPesquisar.SuspendLayout();
             this.SuspendLayout();
@@ -55,34 +55,14 @@ namespace EmpresaABC
             this.gpbPesquisar.TabStop = false;
             this.gpbPesquisar.Text = "Pesquisar por";
             // 
-            // rdbCodigo
+            // lblDescricao
             // 
-            this.rdbCodigo.AutoSize = true;
-            this.rdbCodigo.Location = new System.Drawing.Point(71, 44);
-            this.rdbCodigo.Name = "rdbCodigo";
-            this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
-            this.rdbCodigo.TabIndex = 0;
-            this.rdbCodigo.TabStop = true;
-            this.rdbCodigo.Text = "Codigo";
-            this.rdbCodigo.UseVisualStyleBackColor = true;
-            // 
-            // rdbNome
-            // 
-            this.rdbNome.AutoSize = true;
-            this.rdbNome.Location = new System.Drawing.Point(225, 44);
-            this.rdbNome.Name = "rdbNome";
-            this.rdbNome.Size = new System.Drawing.Size(67, 22);
-            this.rdbNome.TabIndex = 1;
-            this.rdbNome.TabStop = true;
-            this.rdbNome.Text = "Nome";
-            this.rdbNome.UseVisualStyleBackColor = true;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(34, 108);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(425, 24);
-            this.txtDescricao.TabIndex = 2;
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(31, 87);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(76, 18);
+            this.lblDescricao.TabIndex = 4;
+            this.lblDescricao.Text = "Descrição";
             // 
             // btnPesquisar
             // 
@@ -95,15 +75,36 @@ namespace EmpresaABC
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // lblDescricao
+            // txtDescricao
             // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(31, 87);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(76, 18);
-            this.lblDescricao.TabIndex = 4;
-            this.lblDescricao.Text = "Descrição";
+            this.txtDescricao.Location = new System.Drawing.Point(34, 108);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(425, 24);
+            this.txtDescricao.TabIndex = 2;
+            // 
+            // rdbNome
+            // 
+            this.rdbNome.AutoSize = true;
+            this.rdbNome.Location = new System.Drawing.Point(225, 44);
+            this.rdbNome.Name = "rdbNome";
+            this.rdbNome.Size = new System.Drawing.Size(67, 22);
+            this.rdbNome.TabIndex = 1;
+            this.rdbNome.TabStop = true;
+            this.rdbNome.Text = "Nome";
+            this.rdbNome.UseVisualStyleBackColor = true;
+            // 
+            // rdbCodigo
+            // 
+            this.rdbCodigo.AutoSize = true;
+            this.rdbCodigo.Location = new System.Drawing.Point(71, 44);
+            this.rdbCodigo.Name = "rdbCodigo";
+            this.rdbCodigo.Size = new System.Drawing.Size(74, 22);
+            this.rdbCodigo.TabIndex = 0;
+            this.rdbCodigo.TabStop = true;
+            this.rdbCodigo.Text = "Codigo";
+            this.rdbCodigo.UseVisualStyleBackColor = true;
             // 
             // lstPesquisar
             // 

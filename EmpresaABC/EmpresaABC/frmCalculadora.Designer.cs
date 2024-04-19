@@ -34,12 +34,12 @@ namespace EmpresaABC
             this.txtVariavel1 = new System.Windows.Forms.TextBox();
             this.txtVariavel2 = new System.Windows.Forms.TextBox();
             this.gpbOperador = new System.Windows.Forms.GroupBox();
-            this.rdbAdicao = new System.Windows.Forms.RadioButton();
-            this.rdbSubtracao = new System.Windows.Forms.RadioButton();
-            this.rdbMultiplicacao = new System.Windows.Forms.RadioButton();
             this.rdbDivisao = new System.Windows.Forms.RadioButton();
+            this.rdbMultiplicacao = new System.Windows.Forms.RadioButton();
+            this.rdbSubtracao = new System.Windows.Forms.RadioButton();
+            this.rdbAdicao = new System.Windows.Forms.RadioButton();
             this.lblResultado = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -94,27 +94,16 @@ namespace EmpresaABC
             this.gpbOperador.TabStop = false;
             this.gpbOperador.Text = "Operador";
             // 
-            // rdbAdicao
+            // rdbDivisao
             // 
-            this.rdbAdicao.AutoSize = true;
-            this.rdbAdicao.Location = new System.Drawing.Point(24, 38);
-            this.rdbAdicao.Name = "rdbAdicao";
-            this.rdbAdicao.Size = new System.Drawing.Size(99, 24);
-            this.rdbAdicao.TabIndex = 0;
-            this.rdbAdicao.TabStop = true;
-            this.rdbAdicao.Text = "Adição (+)";
-            this.rdbAdicao.UseVisualStyleBackColor = true;
-            // 
-            // rdbSubtracao
-            // 
-            this.rdbSubtracao.AutoSize = true;
-            this.rdbSubtracao.Location = new System.Drawing.Point(24, 83);
-            this.rdbSubtracao.Name = "rdbSubtracao";
-            this.rdbSubtracao.Size = new System.Drawing.Size(120, 24);
-            this.rdbSubtracao.TabIndex = 1;
-            this.rdbSubtracao.TabStop = true;
-            this.rdbSubtracao.Text = "Subtração (-)";
-            this.rdbSubtracao.UseVisualStyleBackColor = true;
+            this.rdbDivisao.AutoSize = true;
+            this.rdbDivisao.Location = new System.Drawing.Point(24, 173);
+            this.rdbDivisao.Name = "rdbDivisao";
+            this.rdbDivisao.Size = new System.Drawing.Size(96, 24);
+            this.rdbDivisao.TabIndex = 3;
+            this.rdbDivisao.TabStop = true;
+            this.rdbDivisao.Text = "Divisão (/)";
+            this.rdbDivisao.UseVisualStyleBackColor = true;
             // 
             // rdbMultiplicacao
             // 
@@ -127,16 +116,27 @@ namespace EmpresaABC
             this.rdbMultiplicacao.Text = "Multiplicação (*)";
             this.rdbMultiplicacao.UseVisualStyleBackColor = true;
             // 
-            // rdbDivisao
+            // rdbSubtracao
             // 
-            this.rdbDivisao.AutoSize = true;
-            this.rdbDivisao.Location = new System.Drawing.Point(24, 173);
-            this.rdbDivisao.Name = "rdbDivisao";
-            this.rdbDivisao.Size = new System.Drawing.Size(96, 24);
-            this.rdbDivisao.TabIndex = 3;
-            this.rdbDivisao.TabStop = true;
-            this.rdbDivisao.Text = "Divisão (/)";
-            this.rdbDivisao.UseVisualStyleBackColor = true;
+            this.rdbSubtracao.AutoSize = true;
+            this.rdbSubtracao.Location = new System.Drawing.Point(24, 83);
+            this.rdbSubtracao.Name = "rdbSubtracao";
+            this.rdbSubtracao.Size = new System.Drawing.Size(120, 24);
+            this.rdbSubtracao.TabIndex = 1;
+            this.rdbSubtracao.TabStop = true;
+            this.rdbSubtracao.Text = "Subtração (-)";
+            this.rdbSubtracao.UseVisualStyleBackColor = true;
+            // 
+            // rdbAdicao
+            // 
+            this.rdbAdicao.AutoSize = true;
+            this.rdbAdicao.Location = new System.Drawing.Point(24, 38);
+            this.rdbAdicao.Name = "rdbAdicao";
+            this.rdbAdicao.Size = new System.Drawing.Size(99, 24);
+            this.rdbAdicao.TabIndex = 0;
+            this.rdbAdicao.TabStop = true;
+            this.rdbAdicao.Text = "Adição (+)";
+            this.rdbAdicao.UseVisualStyleBackColor = true;
             // 
             // lblResultado
             // 
@@ -148,13 +148,13 @@ namespace EmpresaABC
             this.lblResultado.TabIndex = 5;
             this.lblResultado.Text = "Resultado";
             // 
-            // textBox1
+            // txtResultado
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(493, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtResultado.BackColor = System.Drawing.Color.White;
+            this.txtResultado.Location = new System.Drawing.Point(493, 89);
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.Size = new System.Drawing.Size(201, 20);
+            this.txtResultado.TabIndex = 6;
             // 
             // btnCalcular
             // 
@@ -180,6 +180,7 @@ namespace EmpresaABC
             this.btnLimpar.TabIndex = 8;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSair
             // 
@@ -192,6 +193,7 @@ namespace EmpresaABC
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmCalculadora
             // 
@@ -201,7 +203,7 @@ namespace EmpresaABC
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtResultado);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.gpbOperador);
             this.Controls.Add(this.txtVariavel2);
@@ -229,7 +231,7 @@ namespace EmpresaABC
         private System.Windows.Forms.RadioButton rdbSubtracao;
         private System.Windows.Forms.RadioButton rdbAdicao;
         private System.Windows.Forms.Label lblResultado;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtResultado;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSair;

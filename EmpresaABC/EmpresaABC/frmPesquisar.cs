@@ -16,5 +16,10 @@ namespace EmpresaABC
         {
             InitializeComponent();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            lstPesquisar.Items.Clear();
+        }
     }
 }

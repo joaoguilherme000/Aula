@@ -20,14 +20,15 @@ namespace EmpresaABC
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             // Verifica se foram inseridos valores válidos nos TextBox
-            if (!double.TryParse(txtNumero1.Text, out double num1) || !double.TryParse(txtNumero2.Text, out double num2))
+            if (!double.TryParse(txtVariavel1.Text, out double num1) || !double.TryParse(txtVariavel2.Text, out double num2))
             {
                 MessageBox.Show("Por favor, insira números válidos.");
                 return;
             }
 
-            // Verifica qual operador foi selecionado
             double resultado = 0;
+
+            // Verifica qual operador foi selecionado e realiza a operação correspondente
             if (rdbAdicao.Checked)
             {
                 resultado = num1 + num2;
@@ -51,8 +52,20 @@ namespace EmpresaABC
                 resultado = num1 / num2;
             }
 
-            // Exibe o resultado
-            MessageBox.Show("O resultado é: " + resultado.ToString());
+            // Mostra o resultado no TextBox txtResultado
+            txtResultado.Text = resultado.ToString();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtResultado.Clear();
+            txtVariavel1.Clear();
+            txtVariavel2.Clear();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
