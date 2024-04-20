@@ -29,9 +29,14 @@ namespace EmpresaABC
 
         private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int i = lstPesquisar.SelectedIndex;
-            string nome = lstPesquisar.SelectedItem.ToString();
-            MessageBox.Show("o numero da linha " + i + " " + nome);
+            // Verifica se algum item está selecionado
+            if (lstPesquisar.SelectedItem != null)
+            {
+                string nome = lstPesquisar.SelectedItem.ToString();
+                frmFuncionarios abrir = new frmFuncionarios(nome);
+                abrir.Show();
+                this.Hide();
+            }
         }
 
         private void txtDescricao_KeyDown(object sender, KeyEventArgs e)

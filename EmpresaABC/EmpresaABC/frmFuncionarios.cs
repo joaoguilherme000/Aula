@@ -18,6 +18,13 @@ namespace EmpresaABC
             desabilitarCampos();
         }
 
+        public frmFuncionarios(string nome)
+        {
+            InitializeComponent();
+            habilitarCampos();
+            txtNome.Text = nome;
+        }
+
         private void frmFuncionarios_Load(object sender, EventArgs e)
         {
 
@@ -108,7 +115,7 @@ namespace EmpresaABC
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals("") 
+            if (txtCodigo.Text.Equals("")
                 || txtNome.Text.Equals("")
                 || txtBairro.Text.Equals("")
                 || txtSenha.Text.Equals("")
@@ -124,7 +131,8 @@ namespace EmpresaABC
                 MessageBox.Show("Algum campo vazio!!",
                 "Mensagem do sistema", MessageBoxButtons.OK,
                 MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            }else
+            }
+            else
             {
                 MessageBox.Show("Cadastrado com sucesso!!!",
                     "Mensagem do sistema", MessageBoxButtons.OK,
