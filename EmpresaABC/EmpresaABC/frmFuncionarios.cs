@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace EmpresaABC
 {
@@ -147,6 +148,27 @@ namespace EmpresaABC
             frmPesquisar abrir = new frmPesquisar();
             abrir.Show();
             this.Hide();
+        }
+
+        public void buscaCEP(string cep)
+        {
+            WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+            // string end = ws.consultaCEP(mskCEP.Text);
+            // txtEndereço.Text = end
+        }
+
+        private void mskCEP_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                // busca o cep
+            }
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = "";
         }
     }
 }
