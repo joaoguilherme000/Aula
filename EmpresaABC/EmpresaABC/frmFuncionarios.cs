@@ -168,7 +168,11 @@ namespace EmpresaABC
         private void btnConectar_Click(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = "";
+            con.ConnectionString = "Server=localhost;Port=3306;Database=dbloja;Uid=etecia;Pwd=123456";
+            con.Open();
+            MessageBox.Show("Conexão aberta...");
+            con.Close();
+            MessageBox.Show("Conexão fechada...");
         }
     }
 }
