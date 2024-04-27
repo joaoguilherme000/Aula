@@ -68,9 +68,25 @@ namespace EmpresaABC
 
         }
 
+        public void limparCampos()
+        {
+            txtCodigo.Clear();
+            txtNome.Clear();
+            txtBairro.Clear();
+            txtSenha.Clear();
+            txtCidade.Clear();
+            txtEmail.Clear();
+            txtEndereço.Clear();
+            txtNumero.Clear();
+            mskCelular.Text = "";
+            mskCEP.Text = "";
+            mskCPF.Text = "";
+            cbbEstado.Text = "";
+        }
+
         public void habilitarCampos()
         {
-            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = true;
             txtNome.Enabled = true;
             txtBairro.Enabled = true;
             txtSenha.Enabled = true;
@@ -114,8 +130,35 @@ namespace EmpresaABC
 
         }
 
+        // metodo cadastrar funcionarios
+        public void cadastrarFuncionarios()
+        {
+            MySqlCommand conm = new MySqlCommand();
+            conm.CommandText = "insert into tbFuncionarios(nome, email, cpf, telCel, endereco, numero, cep, bairro, cidade, estado) values(@nome, @email, @cpf,@telCel, @endereco, @numero, @cep, @bairro, @cidade, @estado);";
+            conm.CommandType = CommandType.StoredProcedure;
+
+            conm.Parameters.Clear();
+            conm.Parameters.Add("@nome",MySqlDbType.VarChar,100).Value = txtNome.Text;
+            conm.Parameters.Add("@email",MySqlDbType.VarChar,100).Value = txtEmail.Text;
+            conm.Parameters.Add("@cpf",MySqlDbType.VarChar,14).Value = mskCPF.Text;
+            conm.Parameters.Add("@telCel",MySqlDbType.VarChar,10).Value = mskCelular.Text;
+            conm.Parameters.Add("@endereco",MySqlDbType.VarChar,100).Value = txtEndereço.Text;
+            conm.Parameters.Add("@numero",MySqlDbType.VarChar,5).Value = txtNumero.Text;
+            conm.Parameters.Add("@cep",MySqlDbType.VarChar,9).Value = mskCEP.Text;
+            conm.Parameters.Add("@bairro",MySqlDbType.VarChar,100).Value = txtBairro.Text;
+            conm.Parameters.Add("@cidade",MySqlDbType.VarChar,100).Value = txtCidade.Text;
+            conm.Parameters.Add("@estado",MySqlDbType.VarChar,100).Value = cbbEstado.Text;
+
+            conm.Connection = Conexao.obterConexao();
+            int res = conm.ExecuteNonQuery();
+            MessageBox.Show("Cadastrado com sucesso");
+            limparCampos();
+            Conexao.fecharConexao();
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+
             if (txtCodigo.Text.Equals("")
                 || txtNome.Text.Equals("")
                 || txtBairro.Text.Equals("")
@@ -135,9 +178,7 @@ namespace EmpresaABC
             }
             else
             {
-                MessageBox.Show("Cadastrado com sucesso!!!",
-                    "Mensagem do sistema", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                cadastrarFuncionarios();
                 desabilitarCampos();
                 btnNovo.Enabled = true;
             }
@@ -163,16 +204,6 @@ namespace EmpresaABC
             {
                 // busca o cep
             }
-        }
-
-        private void btnConectar_Click(object sender, EventArgs e)
-        {
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = "Server=localhost;Port=3306;Database=dbloja;Uid=etecia;Pwd=123456";
-            con.Open();
-            MessageBox.Show("Conexão aberta...");
-            con.Close();
-            MessageBox.Show("Conexão fechada...");
         }
     }
 }
