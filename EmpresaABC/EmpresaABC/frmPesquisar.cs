@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlConnector;
 
 namespace EmpresaABC
 {
@@ -17,6 +18,16 @@ namespace EmpresaABC
             InitializeComponent();
         }
 
+        public void buscaCodigo()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where codFunc = 1;";
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+        }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             lstPesquisar.Items.Add(txtDescricao.Text);
