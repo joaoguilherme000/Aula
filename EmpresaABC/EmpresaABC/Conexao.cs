@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySqlConnector;
 
 namespace EmpresaABC
 {
     class Conexao
     {
-        private static string connString = "Server=localhost;Port=3306;Database=dbloja;Uid=admin;Pwd=admin";
+        private static string connString = "Server=localhost;Port=3306;Database=dbloja;Uid=root;Pwd=";
 
         private static MySqlConnection con = null;
 

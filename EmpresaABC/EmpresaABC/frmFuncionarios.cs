@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
 namespace EmpresaABC
 {
@@ -34,6 +28,8 @@ namespace EmpresaABC
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             habilitarCampos();
+            txtCodigo.Enabled = false;
+            buscarCodigoFunc();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -130,37 +126,74 @@ namespace EmpresaABC
 
         }
 
+        public void buscarCodigoFunc()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select codFunc+1 from tbFuncionarios order by codFunc desc;";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            DR.Read();
+
+            txtCodigo.Text = Convert.ToString(DR.GetInt32(0));
+            Conexao.fecharConexao();
+        }
+
         // metodo cadastrar funcionarios
         public void cadastrarFuncionarios()
         {
             MySqlCommand conm = new MySqlCommand();
-            conm.CommandText = "insert into tbFuncionarios(nome, email, cpf, telCel, endereco, numero, cep, bairro, cidade, estado) values(@nome, @email, @cpf,@telCel, @endereco, @numero, @cep, @bairro, @cidade, @estado);";
-            conm.CommandType = CommandType.StoredProcedure;
+            conm.CommandText = "insert into tbFuncionarios(nome, email, cpf, telCel, endereco, numero, cep, bairro, cidade, estado) values(@nome, @email, @cpf,@telCel, @endereco, @numero, @cep, @bairro, @cidade, @estado)";
 
-            conm.Parameters.Clear();
-            conm.Parameters.Add("@nome",MySqlDbType.VarChar,100).Value = txtNome.Text;
-            conm.Parameters.Add("@email",MySqlDbType.VarChar,100).Value = txtEmail.Text;
-            conm.Parameters.Add("@cpf",MySqlDbType.VarChar,14).Value = mskCPF.Text;
-            conm.Parameters.Add("@telCel",MySqlDbType.VarChar,10).Value = mskCelular.Text;
-            conm.Parameters.Add("@endereco",MySqlDbType.VarChar,100).Value = txtEndereço.Text;
-            conm.Parameters.Add("@numero",MySqlDbType.VarChar,5).Value = txtNumero.Text;
-            conm.Parameters.Add("@cep",MySqlDbType.VarChar,9).Value = mskCEP.Text;
-            conm.Parameters.Add("@bairro",MySqlDbType.VarChar,100).Value = txtBairro.Text;
-            conm.Parameters.Add("@cidade",MySqlDbType.VarChar,100).Value = txtCidade.Text;
-            conm.Parameters.Add("@estado",MySqlDbType.VarChar,100).Value = cbbEstado.Text;
+            conm.Parameters.AddWithValue("@nome", txtNome.Text);
+            conm.Parameters.AddWithValue("@email", txtEmail.Text);
+            conm.Parameters.AddWithValue("@cpf", mskCPF.Text);
+            conm.Parameters.AddWithValue("@telCel", mskCelular.Text);
+            conm.Parameters.AddWithValue("@endereco", txtEndereço.Text);
+            conm.Parameters.AddWithValue("@numero", txtNumero.Text);
+            conm.Parameters.AddWithValue("@cep", mskCEP.Text);
+            conm.Parameters.AddWithValue("@bairro", txtBairro.Text);
+            conm.Parameters.AddWithValue("@cidade", txtCidade.Text);
+            conm.Parameters.AddWithValue("@estado", cbbEstado.Text);
 
-            conm.Connection = Conexao.obterConexao();
-            int res = conm.ExecuteNonQuery();
-            MessageBox.Show("Cadastrado com sucesso");
-            limparCampos();
-            Conexao.fecharConexao();
+            MySqlConnection conexao = Conexao.obterConexao();
+            if (conexao != null)
+            {
+                try
+                {
+                    conm.Connection = conexao;
+                    int res = conm.ExecuteNonQuery();
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Funcionário cadastrado com sucesso");
+                        limparCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao cadastrar funcionário");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar funcionário: " + ex.Message);
+                }
+                finally
+                {
+                    Conexao.fecharConexao();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível estabelecer conexão com o banco de dados");
+            }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
-            if (txtCodigo.Text.Equals("")
-                || txtNome.Text.Equals("")
+            if (txtNome.Text.Equals("")
                 || txtBairro.Text.Equals("")
                 || txtSenha.Text.Equals("")
                 || txtCidade.Text.Equals("")
