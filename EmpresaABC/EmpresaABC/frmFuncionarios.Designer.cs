@@ -57,8 +57,6 @@ namespace EmpresaABC
             this.label5 = new System.Windows.Forms.Label();
             this.mskCPF = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -190,8 +188,6 @@ namespace EmpresaABC
             this.gpgDados.Controls.Add(this.label5);
             this.gpgDados.Controls.Add(this.mskCPF);
             this.gpgDados.Controls.Add(this.label4);
-            this.gpgDados.Controls.Add(this.txtSenha);
-            this.gpgDados.Controls.Add(this.label3);
             this.gpgDados.Controls.Add(this.txtEmail);
             this.gpgDados.Controls.Add(this.label2);
             this.gpgDados.Controls.Add(this.txtCodigo);
@@ -206,16 +202,16 @@ namespace EmpresaABC
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(396, 68);
+            this.txtNome.Location = new System.Drawing.Point(103, 113);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(339, 26);
+            this.txtNome.Size = new System.Drawing.Size(285, 26);
             this.txtNome.TabIndex = 23;
             // 
             // Nome
             // 
             this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(331, 71);
+            this.Nome.Location = new System.Drawing.Point(46, 116);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(51, 20);
             this.Nome.TabIndex = 22;
@@ -360,27 +356,9 @@ namespace EmpresaABC
             this.label4.TabIndex = 6;
             this.label4.Text = "CPF";
             // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(454, 113);
-            this.txtSenha.MaxLength = 100;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(281, 26);
-            this.txtSenha.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Senha";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(103, 113);
+            this.txtEmail.Location = new System.Drawing.Point(463, 113);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(272, 26);
@@ -389,7 +367,7 @@ namespace EmpresaABC
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 116);
+            this.label2.Location = new System.Drawing.Point(409, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 2;
@@ -447,8 +425,6 @@ namespace EmpresaABC
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.GroupBox gpgDados;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigo;

@@ -66,6 +66,7 @@ namespace EmpresaABC
 
         private void lstPesquisar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             // Verifica se algum item está selecionado
             if (lstPesquisar.SelectedItem != null)
             {

@@ -18,6 +18,7 @@ namespace EmpresaABC
             InitializeComponent();
             habilitarCampos();
             txtNome.Text = nome;
+            carregaFuncionarios(txtNome.Text);
         }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
@@ -69,7 +70,6 @@ namespace EmpresaABC
             txtCodigo.Clear();
             txtNome.Clear();
             txtBairro.Clear();
-            txtSenha.Clear();
             txtCidade.Clear();
             txtEmail.Clear();
             txtEndereço.Clear();
@@ -85,7 +85,6 @@ namespace EmpresaABC
             txtCodigo.Enabled = true;
             txtNome.Enabled = true;
             txtBairro.Enabled = true;
-            txtSenha.Enabled = true;
             txtCidade.Enabled = true;
             txtEmail.Enabled = true;
             txtEndereço.Enabled = true;
@@ -108,7 +107,6 @@ namespace EmpresaABC
             txtCodigo.Enabled = false;
             txtNome.Enabled = false;
             txtBairro.Enabled = false;
-            txtSenha.Enabled = false;
             txtCidade.Enabled = false;
             txtEmail.Enabled = false;
             txtEndereço.Enabled = false;
@@ -190,12 +188,38 @@ namespace EmpresaABC
             }
         }
 
+        public void carregaFuncionarios(String nome)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where nome = "+nome+";";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+
+            DR.Read();
+
+            txtCodigo.Text = DR.GetInt32(0).ToString();
+            txtNome.Text = DR.GetString(1);
+            txtEmail.Text = DR.GetString(2);
+            mskCPF.Text = DR.GetString(3);
+            mskCelular.Text = DR.GetString(4);
+            txtEndereço.Text = DR.GetString(5);
+            txtNumero.Text = DR.GetString(6);
+            mskCEP.Text = DR.GetString(7);
+            txtBairro.Text = DR.GetString(8);
+            txtCidade.Text = DR.GetString(9);
+            cbbEstado.Text = DR.GetString(10);
+            Conexao.fecharConexao();
+
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
             if (txtNome.Text.Equals("")
                 || txtBairro.Text.Equals("")
-                || txtSenha.Text.Equals("")
                 || txtCidade.Text.Equals("")
                 || txtEmail.Text.Equals("")
                 || txtEndereço.Text.Equals("")
