@@ -38,7 +38,7 @@ namespace EmpresaABC
         public void buscaNome(string nomeFunc)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where nome like '%@nome%';";
+            comm.CommandText = "select * from tbFuncionarios where nome like '%"+nomeFunc+"%';";
             comm.Connection = Conexao.obterConexao();
 
             comm.Parameters.Clear();
@@ -48,7 +48,7 @@ namespace EmpresaABC
             DR = comm.ExecuteReader();
             while (DR.Read())
             {
-                lstPesquisar.Items.Add(DR.GetString(0));
+                lstPesquisar.Items.Add(DR.GetString(1));
             }
 
             Conexao.fecharConexao();
