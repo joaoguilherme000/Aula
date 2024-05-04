@@ -18,19 +18,45 @@ namespace EmpresaABC
             InitializeComponent();
         }
 
-        public void buscaCodigo()
+        public void buscaCodigo(int codigo)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where codFunc = 1;";
+            comm.CommandText = "select * from tbFuncionarios where codFunc = @codFunc;";
             comm.Connection = Conexao.obterConexao();
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codigo;
 
             MySqlDataReader DR;
             DR = comm.ExecuteReader();
+            DR.Read();
 
+            lstPesquisar.Items.Add(DR.GetString(1));
+
+            Conexao.fecharConexao();
+        }
+        public void buscaNome(string nomeFunc)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "select * from tbFuncionarios where nome like '%@nome%';";
+            comm.Connection = Conexao.obterConexao();
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.String, 100).Value = nomeFunc;
+
+            MySqlDataReader DR;
+            DR = comm.ExecuteReader();
+            while (DR.Read())
+            {
+                lstPesquisar.Items.Add(DR.GetString(0));
+            }
+
+            Conexao.fecharConexao();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            lstPesquisar.Items.Add(txtDescricao.Text);
+            //buscaCodigo(Convert.ToInt32(txtDescricao.Text));
+            buscaNome(txtDescricao.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)
