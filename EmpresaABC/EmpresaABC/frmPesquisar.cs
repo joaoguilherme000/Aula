@@ -55,8 +55,15 @@ namespace EmpresaABC
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            //buscaCodigo(Convert.ToInt32(txtDescricao.Text));
-            buscaNome(txtDescricao.Text);
+            if (rdbCodigo.Enabled)
+            {
+                buscaCodigo(Convert.ToInt32(txtDescricao.Text));
+            }
+            else if (rdbNome.Enabled)
+            {
+                buscaNome(txtDescricao.Text);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -19,6 +19,8 @@ namespace EmpresaABC
             habilitarCampos();
             txtNome.Text = nome;
             carregaFuncionarios(txtNome.Text);
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void frmFuncionarios_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace EmpresaABC
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            alterarFuncionario(Convert.ToInt32(txtCodigo.Text));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -123,22 +125,6 @@ namespace EmpresaABC
             btnCadastrar.Enabled = false;
 
         }
-
-        public void buscarCodigoFunc()
-        {
-            MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select codFunc+1 from tbFuncionarios order by codFunc desc;";
-            comm.CommandType = CommandType.Text;
-            comm.Connection = Conexao.obterConexao();
-
-            MySqlDataReader DR;
-            DR = comm.ExecuteReader();
-            DR.Read();
-
-            txtCodigo.Text = Convert.ToString(DR.GetInt32(0));
-            Conexao.fecharConexao();
-        }
-
         // metodo cadastrar funcionarios
         public void cadastrarFuncionarios()
         {
@@ -191,8 +177,12 @@ namespace EmpresaABC
         public void carregaFuncionarios(String nome)
         {
             MySqlCommand comm = new MySqlCommand();
-            comm.CommandText = "select * from tbFuncionarios where nome = "+nome+";";
+            comm.CommandText = "select * from tbFuncionarios where nome = @nome";
             comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 100).Value = nome;
+
             comm.Connection = Conexao.obterConexao();
 
             MySqlDataReader DR;
@@ -212,7 +202,41 @@ namespace EmpresaABC
             txtCidade.Text = DR.GetString(9);
             cbbEstado.Text = DR.GetString(10);
             Conexao.fecharConexao();
+        }
 
+        public void buscarCodigoFunc()
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "SELECT IFNULL(MAX(codFunc), 0) + 1 AS NextCode FROM tbFuncionarios;";
+            comm.CommandType = CommandType.Text;
+            comm.Connection = Conexao.obterConexao();
+
+            using (MySqlDataReader DR = comm.ExecuteReader())
+            {
+                if (DR.Read())
+                {
+                    int nextCode = DR.GetInt32("NextCode");
+                    txtCodigo.Text = nextCode.ToString();
+                }
+                else
+                {
+                    // Handle case where no rows are returned
+                    // For example, set a default value for txtCodigo.Text
+                    txtCodigo.Text = "1"; // Assuming default code is 1
+                }
+            }
+
+            Conexao.fecharConexao();
+        }
+
+        public void funcaoCarregaFuncionario()
+        {
+            habilitarCampos();
+            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = false;
+            txtCodigo.Enabled = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -248,6 +272,7 @@ namespace EmpresaABC
             this.Hide();
         }
 
+
         public void buscaCEP(string cep)
         {
             WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
@@ -260,6 +285,63 @@ namespace EmpresaABC
             if(e.KeyCode == Keys.Enter)
             {
                 // busca o cep
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            txtNome.Focus();
+        }
+
+        public void alterarFuncionario(int codFunc)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "update tbFuncionarios set nome= @nome, email= @email, cpf= @cpf, telCel= @telcel, endereco= @endereco, numero= @numero, cep= @cep, bairro= @bairro, cidade= @cidade, estado= @estado where codFunc= @codFunc";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.AddWithValue("@nome", txtNome.Text);
+            comm.Parameters.AddWithValue("@email", txtEmail.Text);
+            comm.Parameters.AddWithValue("@cpf", mskCPF.Text);
+            comm.Parameters.AddWithValue("@telCel", mskCelular.Text);
+            comm.Parameters.AddWithValue("@endereco", txtEndereço.Text);
+            comm.Parameters.AddWithValue("@numero", txtNumero.Text);
+            comm.Parameters.AddWithValue("@cep", mskCEP.Text);
+            comm.Parameters.AddWithValue("@bairro", txtBairro.Text);
+            comm.Parameters.AddWithValue("@cidade", txtCidade.Text);
+            comm.Parameters.AddWithValue("@estado", cbbEstado.Text);
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32,11).Value = codFunc;
+
+            MySqlConnection conexao = Conexao.obterConexao();
+            if (conexao != null)
+            {
+                try
+                {
+                    comm.Connection = conexao;
+                    int res = comm.ExecuteNonQuery();
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Alterado com sucesso");
+                        limparCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao cadastrar funcionário");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar funcionário: " + ex.Message);
+                }
+                finally
+                {
+                    Conexao.fecharConexao();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível estabelecer conexão com o banco de dados");
             }
         }
     }
