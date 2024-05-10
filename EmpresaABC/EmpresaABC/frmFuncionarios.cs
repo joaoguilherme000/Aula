@@ -327,12 +327,12 @@ namespace EmpresaABC
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao cadastrar funcionário");
+                        MessageBox.Show("Falha ao Alterar funcionário");
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao cadastrar funcionário: " + ex.Message);
+                    MessageBox.Show("Erro ao Alterar funcionário: " + ex.Message);
                 }
                 finally
                 {
@@ -343,6 +343,52 @@ namespace EmpresaABC
             {
                 MessageBox.Show("Não foi possível estabelecer conexão com o banco de dados");
             }
+        }
+
+        public void excluirFuncionario(int codFunc)
+        {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "delete from tbFuncionarios where codFunc = @codFunc";
+            comm.CommandType = CommandType.Text;
+
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = codFunc;
+
+            MySqlConnection conexao = Conexao.obterConexao();
+            if (conexao != null)
+            {
+                try
+                {
+                    comm.Connection = conexao;
+                    int res = comm.ExecuteNonQuery();
+                    if (res > 0)
+                    {
+                        MessageBox.Show("Excluido com Sucesso");
+                        limparCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao Excluir funcionário");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao Excluir funcionário: " + ex.Message);
+                }
+                finally
+                {
+                    Conexao.fecharConexao();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível estabelecer conexão com o banco de dados");
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            excluirFuncionario(Convert.ToInt32(txtCodigo.Text));
         }
     }
 }

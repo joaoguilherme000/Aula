@@ -142,6 +142,7 @@ namespace EmpresaABC
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
