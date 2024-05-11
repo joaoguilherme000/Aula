@@ -23,3 +23,7 @@ bairro varchar (100),
 cidade varchar (100),
 estado varchar (100),
 primary key(codFunc));
+
+também criar os usuarios:
+
+create table tbUsuarios( codUsu int not null AUTO_INCREMENT, nome varchar(30) not null, senha varchar(10) not null, PRIMARY KEY (codUsu));
