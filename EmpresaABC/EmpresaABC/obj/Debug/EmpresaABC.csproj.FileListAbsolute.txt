@@ -110,3 +110,4 @@ C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaA
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.csproj.CopyComplete
+C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmCadFunc.resources
