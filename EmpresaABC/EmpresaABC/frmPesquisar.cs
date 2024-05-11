@@ -83,13 +83,5 @@ namespace EmpresaABC
                 this.Hide();
             }
         }
-
-        private void txtDescricao_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show("funcionou");
-            }
-        }
     }
 }

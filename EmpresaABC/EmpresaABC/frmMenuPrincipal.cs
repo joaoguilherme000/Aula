@@ -24,7 +24,9 @@ namespace EmpresaABC
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            frmCadFunc abrir = new frmCadFunc();
+            abrir.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -233,10 +233,6 @@ namespace EmpresaABC
         {
             habilitarCampos();
             txtCodigo.Enabled = false;
-            txtCodigo.Enabled = false;
-            txtCodigo.Enabled = false;
-            txtCodigo.Enabled = false;
-            txtCodigo.Enabled = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -368,7 +364,7 @@ namespace EmpresaABC
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao Excluir funcionário");
+                        MessageBox.Show("Falha ao cadastrar funcionário");
                     }
                 }
                 catch (Exception ex)
