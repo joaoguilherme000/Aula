@@ -112,3 +112,5 @@ C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaA
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.csproj.CopyComplete
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmCadFunc.resources
 C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\obj\Debug\EmpresaABC.frmPesquisarUsuarios.resources
+C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\bin\Debug\RestSharp.dll
+C:\Users\Laboratorio-Info\Source\Repos\joaoguilherme000\Aula\EmpresaABC\EmpresaABC\bin\Debug\RestSharp.xml

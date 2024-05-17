@@ -2,6 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using MySqlConnector;
+using RestSharp;
+using RestSharp.Deserializers;
 
 namespace EmpresaABC
 {
@@ -271,16 +273,29 @@ namespace EmpresaABC
 
         public void buscaCEP(string cep)
         {
-            WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
-            // string end = ws.consultaCEP(mskCEP.Text);
-            // txtEndereço.Text = end
+
+
         }
 
         private void mskCEP_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                // busca o cep
+                RestClient restClient = new RestClient(string.Format("https://viacep.com.br/ws/{0}/json", mskCEP.Text));
+                RestRequest restRequest = new RestRequest(Method.GET);
+
+                IRestResponse restResponse = restClient.Execute(restRequest);
+
+                DadosRetorno dadosRetorno = new JsonDeserializer().Deserialize<DadosRetorno>(restResponse);
+
+                mskCEP.Text = dadosRetorno.cep;
+                txtEndereço.Text = dadosRetorno.logradouro;
+                txtBairro.Text = dadosRetorno.bairro;
+                txtCidade.Text = dadosRetorno.localidade;
+                cbbEstado.Text = dadosRetorno.uf;
+
+                txtNumero.Focus();
+
             }
         }
 
